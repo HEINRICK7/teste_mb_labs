@@ -1,6 +1,5 @@
 import { Router, Request, Response } from 'express';
 import { UsuarioController } from '../controllers/UsuarioController';
-import { Usuario } from '../entity/Usuario';
 
 import { userValidator, userValidatorResult} from '../validator/userValidator'
 
