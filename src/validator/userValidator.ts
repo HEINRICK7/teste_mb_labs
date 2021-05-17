@@ -23,4 +23,10 @@ export const userValidator = [
     check('email')
         .isEmail()
         .withMessage('Digite um email válido'),
+
+        check('password')
+        .isLength({ min: 5 })
+        .withMessage('Deve ter pelo menos 5 caracteres')
+        .matches(/\d/)
+        .withMessage('deve conter um número'),
 ]
