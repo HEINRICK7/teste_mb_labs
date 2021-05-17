@@ -2,9 +2,10 @@ import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 
 @Entity()
 export class Usuario {
-    constructor(nome: string, email: string){
+    constructor(nome: string, email: string, password: string){
         this.nome = nome;
         this.email = email;
+        this.password = password;
 
     }
 
@@ -16,5 +17,8 @@ export class Usuario {
 
     @Column()
     email: string;
+
+    @Column()
+    password: string;
 
 }
