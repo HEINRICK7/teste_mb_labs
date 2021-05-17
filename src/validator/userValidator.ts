@@ -12,7 +12,7 @@ next();
 }
 
 export const userValidator = [
-    check('name')
+    check('nome')
         .trim()
         .not()
         .isEmpty()
