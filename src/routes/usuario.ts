@@ -20,5 +20,5 @@ routerUsuario.post('/', userValidator, userValidatorResult, usuarioCtrl.create);
 routerUsuario.get('/', async(req: Request, res: Response) => {
 
     const usuarios = await usuarioCtrl.getAll();
-    res.json(usuarios)
-})
+    res.json(usuarios);
+});
