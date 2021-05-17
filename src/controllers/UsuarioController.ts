@@ -7,4 +7,10 @@ export class UsuarioController {
 
         return usuarioSalvo
     }
+
+    async getAll() {
+        const usuarios = await getManager().find(Usuario);
+
+        return usuarios;
+    }
 }
