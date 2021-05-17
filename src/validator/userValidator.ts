@@ -16,9 +16,9 @@ export const userValidator = [
         .trim()
         .not()
         .isEmpty()
-        .withMessage('name is required')
+        .withMessage('O nome é obrigatório')
         .isLength({min: 3, max: 20 })
-        .withMessage('First name muste be 3 to 20 characters long'),
+        .withMessage('O nome deve ter de 3 a 20 caracteres'),
 
     check('email')
         .isEmail()
