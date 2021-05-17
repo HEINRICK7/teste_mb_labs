@@ -12,13 +12,7 @@ const usuarioCtrl = new UsuarioController();
 /**
  * Serviço para criar um novo usuário
  */
-routerUsuario.post('/', userValidator, userValidatorResult, async (req: Request, res: Response) => {
-    
-    const { nome, email } = req.body;
-    const usuario = new Usuario(nome, email);
-    const usuarioSalvo = await usuarioCtrl.create(usuario);
-    res.json(usuarioSalvo)
-});
+routerUsuario.post('/', userValidator, userValidatorResult, usuarioCtrl.create);
 
 /**
  * Serviço para recuperar todos usuários
