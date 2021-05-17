@@ -19,3 +19,12 @@ routerUsuario.post('/', userValidator, userValidatorResult, async (req: Request,
     const usuarioSalvo = await usuarioCtrl.create(usuario);
     res.json(usuarioSalvo)
 });
+
+/**
+ * Serviço para recuperar todos usuários
+ */
+routerUsuario.get('/', async(req: Request, res: Response) => {
+
+    const usuarios = await usuarioCtrl.getAll();
+    res.json(usuarios)
+})
