@@ -12,7 +12,7 @@ services:
             - "5432:5432"        
 
     app:
-        container_name: mb_labs-api
+        container_name: teste_mb_labs-api
         restart: always
         build: .
         ports:

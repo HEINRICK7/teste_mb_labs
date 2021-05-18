@@ -33,4 +33,4 @@ app.use('/estabelecimento', routerEstabelecimento);
 app.use('/estabelecimento', routerEstabelecimento);
 app.use('/estabelecimentos', routerEstabelecimento);
 
-app.use('/auth', routerAuthUser)
+app.use('/auth', routerAuthUser);
