@@ -1,5 +1,5 @@
 import { Request, Response} from 'express'
-import { getManager, getRepository } from 'typeorm';
+import { getRepository } from 'typeorm';
 import { Usuario } from '../entity/Usuario';
 
 export class UsuarioController {
@@ -57,7 +57,6 @@ export class UsuarioController {
         }
         return res.status(404).json({message: 'Usuario not found'})
     }
-    
     
 
 }
