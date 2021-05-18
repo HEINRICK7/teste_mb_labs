@@ -25,7 +25,7 @@ export class Usuario {
     @BeforeInsert()
     @BeforeUpdate()
     hashPassword() {
-        this.password = bcrypt.hashSync(this.password, 8)
+        this.password = bcrypt.hashSync(this.password, 8);
     }
 
 }
