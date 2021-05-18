@@ -16,8 +16,19 @@ routerUsuario.post('/', userValidator, userValidatorResult, usuarioCtrl.create);
 /**
  * Serviço para recuperar todos usuários
  */
-routerUsuario.get('/', async(req: Request, res: Response) => {
+routerUsuario.get('/', usuarioCtrl.getUsers);
 
-    const usuarios = await usuarioCtrl.getAll();
-    res.json(usuarios);
-});
+/**
+ * Serviço para recuperar usuário por ID
+ */
+ routerUsuario.get('/:id', usuarioCtrl.getUser);
+
+ /**
+ * Serviço para atualização do usuário!
+ */
+  routerUsuario.put('/:id', usuarioCtrl.updateUser);
+
+  /**
+ * Serviço para remover do usuário!
+ */
+   routerUsuario.delete('/:id', usuarioCtrl.removeUser);
