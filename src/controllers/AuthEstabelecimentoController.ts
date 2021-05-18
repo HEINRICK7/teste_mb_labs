@@ -8,7 +8,7 @@ import * as authConfig from '../config/auth.json'
 
 import { Estabelecimentos } from '../entity/Estabelecimento';
 
-export class AuthUserController {
+export class AuthEstabelecimentoController {
     async authenticate(req: Request, res: Response) {
 
         const repository = getRepository(Estabelecimentos);

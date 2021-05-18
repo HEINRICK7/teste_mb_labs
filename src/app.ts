@@ -7,7 +7,9 @@ import * as morgan from 'morgan';
 import { connectSeverDB } from './config/db';
 import { routerUsuario } from './routes/usuario';
 import { routerEstabelecimento } from './routes/estabelecimento';
-import { routerAuthUser } from './routes/auth';
+
+import { routerAuthUser } from './routes/authUsuario';
+import { routerAuthEstabelecimento } from './routes/authEstabelecimento';
 
 
 export const app = express();
@@ -34,3 +36,5 @@ app.use('/estabelecimento', routerEstabelecimento);
 app.use('/estabelecimentos', routerEstabelecimento);
 
 app.use('/auth', routerAuthUser);
+
+app.use('/authEstabelecimento', routerAuthEstabelecimento);
