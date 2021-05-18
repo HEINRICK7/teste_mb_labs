@@ -3,9 +3,9 @@ import * as  bcrypt  from 'bcryptjs';
 
 @Entity()
 export class Estabelecimentos {
-    constructor(id: number, name: string, email: string, password: string, cnpj: string ) {
+    constructor(id: number, nome: string, email: string, password: string, cnpj: string ) {
         this.id = id;
-        this.name = name;
+        this.nome = nome;
         this.email = email;
         this.cnpj = cnpj;
         this.password = password;
@@ -15,7 +15,7 @@ export class Estabelecimentos {
     id: number;
 
     @Column()
-    name: string;
+    nome: string;
 
     @Column()
     email: string;

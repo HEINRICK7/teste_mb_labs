@@ -2,7 +2,7 @@ import { getRepository } from 'typeorm';
 import { Estabelecimentos } from '../entity/Estabelecimento';
 import { Request, Response } from 'express';
 
-export class UsuarioController {
+export class EstabelecimentoController {
 
    async getEstabelecimentos( req: Request, res: Response){
 
@@ -13,17 +13,17 @@ export class UsuarioController {
    async create( req: Request, res: Response){
 
     const repository = getRepository(Estabelecimentos)
-    const { name, email, cnpj, password } = req.body
+    const { nome, email, cnpj, password } = req.body
     const cnpjExists = await getRepository(Estabelecimentos).findOne({where: { cnpj }})
     try {
         if(cnpjExists){
-         res.status(400).json({message: 'CNPJ já cadastrado no nosso banco de dados!'})
+          return res.status(400).json({message: 'CNPJ já cadastrado no nosso banco de dados!'})
 
         } 
 
-        const estabelecimento = repository.create({ name, email, cnpj, password })
-        await getRepository(Estabelecimentos).save(req.body)
-        return res.status(201).json({ message: "Empresa cadastrada com sucesso!"});
+        const estabelecimento = repository.create({ nome, email, cnpj, password })
+        await repository.save(estabelecimento)
+        return res.status(201).json(estabelecimento);
         
 
     } catch (error) {
