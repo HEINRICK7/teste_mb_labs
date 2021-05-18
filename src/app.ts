@@ -20,4 +20,9 @@ app.use(morgan('dev'));
 connectSeverDB();
 
 app.use('/usuario', routerUsuario);
+app.use('/usuario', routerUsuario);
+app.use('/usuario', routerUsuario);
+app.use('/usuario', routerUsuario);
+app.use('/usuarios', routerUsuario);
+
 app.use('/auth', routerAuthUser)
